@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 30px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+.roleta-area {
+  position: relative;
+}
+
+.roleta {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 12px solid white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+}
+
+.fatia {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fatia:nth-child(odd) {
+  background: #2563eb;
+}
+
+.fatia:nth-child(even) {
+  background: #38bdf8;
+}
+
+.fatia span {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  transform: rotate(45deg);
+}
+
+.seta {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 40px solid red;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+button {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 12px;
+  background: #22c55e;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 32px;
+}
